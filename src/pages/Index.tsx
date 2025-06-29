@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Mail, Download, ExternalLink, Menu, X } from "lucide-react";
+import { Github, Linkedin, Mail, Download, ExternalLink, Menu, X, Award } from "lucide-react";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +13,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "projects", "resume", "blog", "contact"];
+      const sections = ["home", "about", "skills", "projects", "internships", "resume", "certifications", "blog", "contact"];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -41,28 +41,55 @@ const Index = () => {
 
   const skills = {
     languages: ["Python", "C", "Java", "HTML", "CSS", "JavaScript"],
-    tools: ["Pandas", "NumPy", "Power BI", "Excel", "Tableau", "SQL", "Git", "GitHub", "MongoDB", "VS Code"],
+    tools: ["Pandas", "NumPy", "Power BI", "Excel", "Tableau", "SQL", "Git", "MongoDB", "VS Code"],
     concepts: ["Data Analysis", "Machine Learning Basics", "Data Visualization", "DSA", "DBMS", "Operating Systems"]
   };
 
   const projects = [
     {
       title: "Plastic Waste Tracker",
-      description: "A comprehensive data science project tracking plastic waste through community data collection and analysis. Submitted for YUKTI competition.",
+      description: "A comprehensive data science project tracking plastic waste using community data collection and analysis. Submitted for YUKTI competition.",
       tech: ["Python", "Data Analysis", "Visualization"],
       status: "YUKTI Submission"
     },
     {
-      title: "SugandhaVatika",
-      description: "Modern e-commerce website with dynamic shopping cart functionality and smooth UI animations built with JavaScript.",
+      title: "E-commerce Website",
+      description: "Modern web application featuring dynamic cart functionality and smooth UI animations built with JavaScript.",
       tech: ["JavaScript", "HTML", "CSS", "UI/UX"],
       status: "Completed"
     },
     {
-      title: "Smart Women Safety App",
-      description: "Machine learning model for detecting isolated unsafe areas for women using geolocation data and safety analytics.",
-      tech: ["Machine Learning", "Python", "Data Processing"],
-      status: "In Development"
+      title: "Personal Portfolio",
+      description: "A responsive website showcasing my skills, certifications, and knowledge as a tech enthusiast with modern design.",
+      tech: ["React", "TypeScript", "Tailwind CSS"],
+      status: "Live"
+    }
+  ];
+
+  const internships = [
+    {
+      title: "Android Developer Intern",
+      company: "India Edu Program",
+      description: "Built Android applications using Kotlin and integrated Firebase services for backend functionality.",
+      skills: ["Kotlin", "Firebase", "Android SDK"]
+    },
+    {
+      title: "Machine Learning Intern",
+      company: "SkillDzire",
+      description: "Worked with real-world datasets, built predictive models, and handled data preprocessing tasks.",
+      skills: ["Python", "ML Models", "Data Processing"]
+    },
+    {
+      title: "Data Science Intern",
+      company: "SkillDzire",
+      description: "Focused on data cleaning, exploratory data analysis, and model development for various datasets.",
+      skills: ["EDA", "Data Cleaning", "Model Development"]
+    },
+    {
+      title: "Web Developer Intern",
+      company: "EY GDS & AICTE",
+      description: "Built modern full-stack web applications using the MERN Stack with focus on scalable architecture.",
+      skills: ["MERN Stack", "Full-Stack Development", "MongoDB"]
     }
   ];
 
@@ -72,11 +99,11 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-slate-200 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-xl text-slate-800">Nagasri Kola</div>
+            <div className="font-bold text-xl text-slate-800">Kola Teja Naga Sri</div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              {["Home", "About", "Skills", "Projects", "Resume", "Blog", "Contact"].map((item) => (
+            <div className="hidden md:flex space-x-6">
+              {["Home", "About", "Skills", "Projects", "Internships", "Resume", "Certifications", "Blog", "Contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -103,7 +130,7 @@ const Index = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-slate-200">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {["Home", "About", "Skills", "Projects", "Resume", "Blog", "Contact"].map((item) => (
+              {["Home", "About", "Skills", "Projects", "Internships", "Resume", "Certifications", "Blog", "Contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -122,7 +149,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto text-center">
           <div className="animate-fade-in">
             <h1 className="text-4xl sm:text-6xl font-bold text-slate-800 mb-6">
-              Nagasri Kola
+              Kola Teja Naga Sri
             </h1>
             <div className="text-xl sm:text-2xl text-blue-600 font-semibold mb-6">
               Data Analyst | CSE Student | Tech Enthusiast
@@ -149,18 +176,18 @@ const Index = () => {
           <Card className="hover:shadow-lg transition-shadow">
             <CardContent className="p-8">
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                I'm a passionate third-year Computer Science student at <strong>Sasi Institute of Technology and Engineering</strong> 
-                with a CGPA of <strong>8.52/10</strong>. My journey in technology is driven by an insatiable curiosity for data 
+                I'm a final-year Computer Science student at <strong>Sasi Institute of Technology and Engineering</strong> 
+                with a CGPA of <strong>8.4/10</strong>. My journey in technology is driven by an insatiable curiosity for data 
                 and its power to solve real-world problems.
               </p>
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                I love working with data, building meaningful projects, and continuously learning about emerging technologies. 
-                My passion lies in data analytics, where I enjoy uncovering patterns and insights that can drive decision-making 
-                and create positive impact.
+                I love working with data, building impactful projects, and constantly learning new skills. 
+                My passion lies in data analytics and machine learning, where I enjoy uncovering patterns and insights 
+                that can drive decision-making and create positive impact.
               </p>
               <p className="text-lg text-slate-700 leading-relaxed">
-                When I'm not coding or analyzing data, you'll find me exploring the latest tech trends, contributing to open-source 
-                projects, or sharing my knowledge with the community.
+                When I'm not coding or analyzing data, you'll find me exploring emerging technologies, contributing to projects, 
+                and sharing my knowledge with the tech community.
               </p>
             </CardContent>
           </Card>
@@ -230,7 +257,7 @@ const Index = () => {
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-xl">{project.title}</CardTitle>
-                    <Badge variant={project.status === "Completed" ? "default" : "secondary"}>
+                    <Badge variant={project.status === "Completed" || project.status === "Live" ? "default" : "secondary"}>
                       {project.status}
                     </Badge>
                   </div>
@@ -257,43 +284,71 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Resume Section */}
-      <section id="resume" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-slate-800 mb-12">Experience & Resume</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-xl text-blue-600">Android Developer Intern</CardTitle>
-                <CardDescription>India Edu Program</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-700">
-                  Built mobile applications using Kotlin with Firebase integration, 
-                  focusing on user experience and backend connectivity.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-xl text-green-600">Machine Learning Intern</CardTitle>
-                <CardDescription>SkillDzire</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-700">
-                  Developed machine learning models, worked extensively with datasets, 
-                  and implemented data preprocessing techniques.
-                </p>
-              </CardContent>
-            </Card>
+      {/* Internships Section */}
+      <section id="internships" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-slate-800 mb-12">Internship Experience</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {internships.map((internship, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-xl text-blue-600">{internship.title}</CardTitle>
+                  <CardDescription className="font-medium text-slate-600">{internship.company}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-slate-700 mb-4">{internship.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {internship.skills.map((skill) => (
+                      <Badge key={skill} variant="outline" className="text-xs">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <Button size="lg" className="hover:scale-105 transition-transform">
-            <Download size={20} className="mr-2" />
-            Download Resume
-          </Button>
+      {/* Resume Section */}
+      <section id="resume" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-800 mb-8">Resume</h2>
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardContent className="p-12">
+              <div className="text-6xl mb-6">📄</div>
+              <h3 className="text-2xl font-semibold text-slate-800 mb-4">Download My Resume</h3>
+              <p className="text-lg text-slate-600 mb-8">
+                Get a comprehensive overview of my education, skills, internships, and projects in a professionally formatted PDF.
+              </p>
+              <Button size="lg" className="hover:scale-105 transition-transform">
+                <Download size={20} className="mr-2" />
+                Download Resume (PDF)
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-800 mb-8">Certifications</h2>
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardContent className="p-12">
+              <div className="text-6xl mb-6">🏆</div>
+              <h3 className="text-2xl font-semibold text-slate-800 mb-4">Professional Certifications</h3>
+              <p className="text-lg text-slate-600 mb-6">
+                I continuously enhance my skills through professional certifications in data tools, machine learning, 
+                Python programming, and web development. This section will showcase my verified achievements and credentials.
+              </p>
+              <Button variant="outline" className="hover:scale-105 transition-transform">
+                <Award size={20} className="mr-2" />
+                View Certifications
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -306,10 +361,10 @@ const Index = () => {
               <div className="text-6xl mb-6">✍️</div>
               <h3 className="text-2xl font-semibold text-slate-800 mb-4">Coming Soon!</h3>
               <p className="text-lg text-slate-600 mb-6">
-                I'm preparing to share insights on data analytics, tech trends, and learning paths. 
-                Stay tuned for articles that blend technical expertise with practical applications.
+                I'm preparing to share insights on data analytics, tech trends, machine learning, and my learning journey. 
+                Stay tuned for articles that blend technical expertise with practical applications and career insights.
               </p>
-              <Button variant="outline">
+              <Button variant="outline" className="hover:scale-105 transition-transform">
                 Subscribe for Updates
               </Button>
             </CardContent>
@@ -327,33 +382,33 @@ const Index = () => {
               <h3 className="text-xl font-semibold text-slate-800 mb-6">Get in Touch</h3>
               <p className="text-slate-700 mb-8">
                 I'm always excited to discuss data projects, collaboration opportunities, 
-                or just chat about technology and innovation.
+                internships, or just chat about technology and innovation.
               </p>
               
               <div className="space-y-4">
                 <a
-                  href="https://github.com/nagasrikola"
+                  href="https://github.com/TejaNagaSri13"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-slate-700 hover:text-blue-600 transition-colors group"
                 >
                   <Github size={24} className="group-hover:scale-110 transition-transform" />
-                  <span>github.com/nagasrikola</span>
+                  <span>github.com/TejaNagaSri13</span>
                 </a>
                 
                 <a
-                  href="https://linkedin.com/in/nagasrikola"
+                  href="https://www.linkedin.com/in/teja-nagasri-kola-27a752280"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-slate-700 hover:text-blue-600 transition-colors group"
                 >
                   <Linkedin size={24} className="group-hover:scale-110 transition-transform" />
-                  <span>linkedin.com/in/nagasrikola</span>
+                  <span>linkedin.com/in/teja-nagasri-kola</span>
                 </a>
                 
                 <div className="flex items-center space-x-3 text-slate-700">
                   <Mail size={24} />
-                  <span>nagasrikola@email.com</span>
+                  <span>tejanagasri13@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -380,11 +435,11 @@ const Index = () => {
       <footer className="bg-slate-800 text-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-slate-300 mb-4">
-            © 2024 Nagasri Kola. Transforming data into insights.
+            © 2024 Kola Teja Naga Sri. Transforming data into insights.
           </p>
           <div className="flex justify-center space-x-6">
             <a
-              href="https://github.com/nagasrikola"
+              href="https://github.com/TejaNagaSri13"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-300 hover:text-white transition-colors hover:scale-110 transform"
@@ -392,7 +447,7 @@ const Index = () => {
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com/in/nagasrikola"
+              href="https://www.linkedin.com/in/teja-nagasri-kola-27a752280"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-300 hover:text-white transition-colors hover:scale-110 transform"
@@ -400,7 +455,7 @@ const Index = () => {
               <Linkedin size={24} />
             </a>
             <a
-              href="mailto:nagasrikola@email.com"
+              href="mailto:tejanagasri13@gmail.com"
               className="text-slate-300 hover:text-white transition-colors hover:scale-110 transform"
             >
               <Mail size={24} />
